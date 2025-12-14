@@ -18,15 +18,15 @@ const PresentationSection = () => {
   }
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 smartboard:py-28 bg-white">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 smartboard:py-28 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl smartboard:text-6xl font-bold text-gray-900 mb-3 md:mb-4">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl smartboard:text-6xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
               📚 Chapter Presentation
             </h2>
-            <p className="text-base md:text-lg smartboard:text-2xl text-gray-600">
+            <p className="text-sm sm:text-base md:text-lg smartboard:text-2xl text-gray-600 px-2">
               Interactive slides covering all concepts of reflection and refraction
             </p>
           </div>
@@ -59,28 +59,13 @@ const PresentationSection = () => {
             {/* Fullscreen Button */}
             <button
               onClick={toggleFullscreen}
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg text-xs md:text-sm smartboard:text-xl smartboard:px-6 smartboard:py-3 transition-colors duration-200 z-20 focus:outline-none focus:ring-2 focus:ring-white"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/50 hover:bg-black/70 text-white px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded text-xs md:text-sm smartboard:text-xl smartboard:px-6 smartboard:py-3 transition-colors duration-200 z-20 focus:outline-none focus:ring-2 focus:ring-white"
               aria-label="Toggle fullscreen"
             >
-              {isFullscreen ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
+              {isFullscreen ? '✕' : '⛶'} <span className="hidden sm:inline">{isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}</span>
             </button>
           </div>
 
-          {/* Tips */}
-          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <span className="text-2xl md:text-3xl smartboard:text-5xl mb-2 block">💡</span>
-              <p className="text-xs md:text-sm smartboard:text-xl text-gray-700">Use arrow keys to navigate slides</p>
-            </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <span className="text-2xl md:text-3xl smartboard:text-5xl mb-2 block">🖱️</span>
-              <p className="text-xs md:text-sm smartboard:text-xl text-gray-700">Click fullscreen for better view</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg">
-              <span className="text-2xl md:text-3xl smartboard:text-5xl mb-2 block">📱</span>
-              <p className="text-xs md:text-sm smartboard:text-xl text-gray-700">Optimized for all devices</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

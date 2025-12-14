@@ -7,11 +7,11 @@ const ProgressTracker = ({ progress }) => {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
-      <div className="container mx-auto px-4 py-3 md:py-4">
-        <div className="flex flex-wrap items-center justify-between gap-3 md:gap-4">
+      <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 md:py-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 md:gap-4">
           {/* Level Badge */}
-          <div className="flex items-center gap-2 md:gap-3">
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-full font-bold text-sm md:text-base smartboard:text-2xl">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 sm:px-3 sm:py-1 md:px-4 md:py-2 rounded-full font-bold text-xs sm:text-sm md:text-base smartboard:text-2xl">
               Level {progress.level}
             </div>
             <div className="text-xs md:text-sm smartboard:text-xl text-gray-600">
@@ -20,17 +20,17 @@ const ProgressTracker = ({ progress }) => {
           </div>
           
           {/* Stats */}
-          <div className="flex items-center gap-3 md:gap-6 text-xs md:text-sm smartboard:text-xl">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-6 text-xs md:text-sm smartboard:text-xl">
             <div className="flex items-center gap-1 md:gap-2">
-              <span className="text-lg md:text-xl smartboard:text-3xl">✅</span>
+              <span className="text-base sm:text-lg md:text-xl smartboard:text-3xl">✅</span>
               <span className="text-gray-700 font-medium">{progress.correctAnswers}</span>
             </div>
             <div className="flex items-center gap-1 md:gap-2">
-              <span className="text-lg md:text-xl smartboard:text-3xl">📊</span>
+              <span className="text-base sm:text-lg md:text-xl smartboard:text-3xl">📊</span>
               <span className="text-gray-700 font-medium">{accuracy}%</span>
             </div>
             <div className="flex items-center gap-1 md:gap-2">
-              <span className="text-lg md:text-xl smartboard:text-3xl">🎯</span>
+              <span className="text-base sm:text-lg md:text-xl smartboard:text-3xl">🎯</span>
               <span className="text-gray-700 font-medium">{progress.questionsAnswered}</span>
             </div>
           </div>
