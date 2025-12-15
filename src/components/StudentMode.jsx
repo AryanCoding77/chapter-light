@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getRandomQuestion } from '../data/questions'
 
-const StudentMode = ({ progress, updateProgress }) => {
+const StudentMode = () => {
   const [difficulty, setDifficulty] = useState('easy')
   const [currentQuestion, setCurrentQuestion] = useState(null)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
@@ -47,16 +47,12 @@ const StudentMode = ({ progress, updateProgress }) => {
     const correct = selectedAnswer === currentQuestion.answer
     setIsCorrect(correct)
     setShowFeedback(true)
-    
-    // Calculate points based on difficulty
-    const points = difficulty === 'easy' ? 10 : difficulty === 'medium' ? 20 : 30
-    updateProgress(correct ? points : 0, correct)
   }
 
   const difficultyConfig = {
-    easy: { emoji: '🟢', label: 'Easy', color: 'green', points: 10 },
-    medium: { emoji: '🟡', label: 'Medium', color: 'yellow', points: 20 },
-    hard: { emoji: '🔴', label: 'Hard', color: 'red', points: 30 }
+    easy: { emoji: '🟢', label: 'Easy', color: 'green' },
+    medium: { emoji: '🟡', label: 'Medium', color: 'yellow' },
+    hard: { emoji: '🔴', label: 'Hard', color: 'red' }
   }
 
   if (!currentQuestion) return null
@@ -95,7 +91,7 @@ const StudentMode = ({ progress, updateProgress }) => {
                 {difficultyConfig[difficulty].emoji}
               </span>
               <span className="bg-white px-2 py-1 sm:px-3 sm:py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm smartboard:text-xl font-medium text-gray-700">
-                +{difficultyConfig[difficulty].points} XP
+                {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
               </span>
             </div>
 
